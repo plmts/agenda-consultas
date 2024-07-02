@@ -52,4 +52,7 @@ def deletar_medico():
     else:
       raise ValueError("Opção inválida.")
 
+def marcar_consulta(crm):
+  print(f"Consulta marcada com sucesso!").lower()
+
 listaMedicos = {}
