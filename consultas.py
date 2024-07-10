@@ -4,21 +4,34 @@ import pacientes
 
 
 def nova_consulta():
-  listaMedicos = medicos.listaMedicos
-  while True:
-    crm = input("Com qual médico você deseja se consultar: informe o CRM: ").lower()
-    if crm in listaMedicos[crm]:
-      if listaMedicos[crm][3] == False:
-        print("Médico indisponível para consultas.")
-      elif listaMedicos[crm][3] == True:
-        medicos.marcar_consulta(crm)
-        break
-      else:
-        print("Algo deu errado. Tente novamente!")
-        break
-    elif crm not in listaMedicos:
-      print("CRM não cadastrado.")
-      break
-    else:
-      print("CRM inválido. Tente novamente")
+    """Agenda uma nova consulta."""
 
+    # Obtém a lista de médicos
+    lista_medicos = medicos.listaMedicos
+
+    # Solicita o CRM do médico
+    crm = input("Com qual médico você deseja se consultar? Informe o CRM: ").lower()
+
+    # Verifica se o CRM é válido
+    if len(crm) != 6:
+        print("Formato de CRM inválido. Tente novamente.")
+        return
+
+    # Verifica se o médico está cadastrado
+    if crm not in lista_medicos:
+        print("Médico não cadastrado. Tente novamente.")
+        return
+
+    # Obtém a disponibilidade do médico
+    disponibilidade = lista_medicos[crm][3]
+
+    # Verifica a disponibilidade do médico
+    if disponibilidade == False:
+        print("Médico indisponível para consultas.")
+        return
+
+    # Agenda a consulta
+    try:
+        medicos.marcar_consulta(crm)
+    except:
+        pass

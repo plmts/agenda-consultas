@@ -67,7 +67,6 @@ def funcao_consultas():
           print("consultadas agendadas")
         elif resposta == 2:
           consultas.nova_consulta()
-          break
         elif resposta == 3:
           print("deletar consulta")
           break

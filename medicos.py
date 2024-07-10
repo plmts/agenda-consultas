@@ -30,6 +30,10 @@ def novo_medico():
   print("\nMédico cadastrado com sucesso!")
 
 def mostrar_medicos():
+  if not listaMedicos:
+    print("Não há médicos cadastrados. Tente novamente!")
+    return
+
   for medico in listaMedicos:
     print(f"Nome: {listaMedicos[medico][0]};\n"
           f"CRM: {listaMedicos[medico][1]};\n"
@@ -43,7 +47,7 @@ def deletar_medico():
     validacao = input(f"Tem certeza que deseja deletar o médico {listaMedicos[crm][0]}?\n"
                       "'S' ou 'N': ").lower()
     if validacao == "s":
-      print(f"O médico {listaMedicos[crm][0]} foi deletado com sucesso!")
+      print(f"O médico {listaMedicos[crm][0]} foi deletado com sucesso!\n")
       listaMedicos.pop(crm)
       break
     elif validacao == "n":
@@ -53,6 +57,6 @@ def deletar_medico():
       raise ValueError("Opção inválida.")
 
 def marcar_consulta(crm):
-  print(f"Consulta marcada com sucesso!").lower()
+  print(f"Consulta marcada com {listaMedicos[crm][0]} com sucesso!\n").lower()
 
 listaMedicos = {}
