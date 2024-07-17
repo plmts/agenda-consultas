@@ -1,4 +1,4 @@
-from pacientes import Paciente
+import pacientes
 import medicos
 import consultas
 
@@ -13,11 +13,11 @@ def funcao_paciente():
     try:
       if resposta in range(1,5):
         if resposta == 1:
-          Paciente.mostrar_pacientes()
+          pacientes.mostrar_pacientes()
         elif resposta == 2:
-          Paciente.novo_paciente()
+          pacientes.novo_paciente()
         elif resposta == 3:
-          Paciente.deletar_paciente()
+          pacientes.deletar_paciente()
         elif resposta == 4:
           programa()
           break
@@ -52,7 +52,6 @@ def funcao_medico():
       print("\nFavor, utilizar as opções disponíveis")
 
 
-
 def funcao_consultas():
   while True:
     print("O que você deseja?\n")
@@ -64,12 +63,11 @@ def funcao_consultas():
     try:
       if resposta in range(1,5):
         if resposta == 1:
-          print("consultadas agendadas")
+          consultas.mostrar_consultas()
         elif resposta == 2:
           consultas.nova_consulta()
         elif resposta == 3:
           print("deletar consulta")
-          break
         elif resposta == 4:
           programa()
           break
