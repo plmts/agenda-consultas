@@ -26,7 +26,6 @@ def funcao_paciente():
     except:
       print("\nFavor, utilizar as opções disponíveis")
 
-
 def funcao_medico():
   while True:
     print("O que você deseja?\n")
@@ -47,10 +46,9 @@ def funcao_medico():
           programa()
           break
       else:
-        pass
+        print("\nFavor, utilizar as opções disponíveis")
     except:
-      print("\nFavor, utilizar as opções disponíveis")
-
+      break
 
 def funcao_consultas():
   while True:
@@ -76,7 +74,6 @@ def funcao_consultas():
     except:
       print("\nFavor, utilizar as opções disponíveis")
 
-
 def programa():
     while True:
       try:
@@ -93,7 +90,6 @@ def programa():
             funcao_consultas()
           elif question == 3:
             funcao_medico()
-            break
           elif question == 4:
             print("\nObrigado. Até a próxima.")
             break

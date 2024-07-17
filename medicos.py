@@ -2,34 +2,31 @@ import consultas
 
 def novo_medico():
   disponibilidade = True
-  while True:
-      #CRM
-      crm = input("\nDigite o CRM do médico: ")
-      if len(crm) == 6:
-        if crm in lista_medicos:
-          raise print("CRM já cadastrado")
-        break
-      else:
-        print("\nCRM inválido, tente novamente!")
+  crm = input(f"Informe o CRM do médico: ").lower()
+  
+  # Verifica se o CRM é válido
+  if len(crm) != 6:
+      print("Formato de CRM inválido. Tente novamente.")
+      return
 
-  while True:
-      #NOME
-      nome = input("\nDigite o nome completo do médico: ")
-      if not isinstance(nome, str) or nome == "" or nome.strip() == "":
-        print("\nNome inválio!")
-      else:
-        break
-      
-  while True:
-      #especialidade
-      especialidade = input("\nDigite a especilidade do médico: ")
-      if especialidade == "" or especialidade.strip() == "":
-        print("\nEspecialiade inválida. Tente novamente!")
-      else:
-        break
+  # Verifica se o médico está cadastrado
+  if crm in lista_medicos:
+      print("Médico já cadastrado.")
+      return
+
+  #NOME
+  nome = input("\nDigite o nome completo do médico: ")
+  if not isinstance(nome, str) or nome == "" or nome.strip() == "":
+    print("\nNome inválio!")
+
+  #especialidade
+  especialidade = input("\nDigite a especilidade do médico: ")
+  if especialidade == "" or especialidade.strip() == "":
+    print("\nEspecialidade inválida. Tente novamente!")
+
     #ADICIONA AO DICIONÁRIO
   lista_medicos[crm] = (nome, crm, especialidade, disponibilidade)
-  print("\nMédico cadastrado com sucesso!")
+  print(f"\nMédico {nome} cadastrado com sucesso!")
 
 def mostrar_medicos():
   if not lista_medicos:
@@ -58,8 +55,5 @@ def deletar_medico():
     else:
       raise ValueError("Opção inválida.")
 
-def marcar_consulta():
-  consultas.nova_consulta()
-
-
-lista_medicos = { '123456' : ['joao jose', '123456', 'blares', True]}
+lista_medicos = { '123456' : ['joao jose', '123456', 'blares', True],
+                 '123455' : ['peter parker', '123455', 'comer', True]}

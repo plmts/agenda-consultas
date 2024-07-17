@@ -56,6 +56,10 @@ def nova_consulta():
 
 def mostrar_consultas():
     """Mostra as consultas cadastradas"""
+    if not lista_consultas:
+        print("Nãoa há consultas agendadas.")
+        return
+
     global id_consulta
     lista_medicos = medicos.lista_medicos
 
