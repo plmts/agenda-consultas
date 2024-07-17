@@ -1,7 +1,7 @@
 <h1>Agendamento de Consultas</h1>
 <h2>Um projeto para portfólio pessoal que visa a criação de um sistema básico para cadastro de consultas, utilizando de python e sua programação orientada a objetos.</h2>
 
-<p>O programa possui as seguintes funcionalidade:</p>
+<p>O programa possui as seguintes funcionalidades:</p>
 <ul>
 <h3>- Pacientes</h3>
   <p>Com os pacientes o usuário terá a oportunidade de verificar os pacientes já cadastrados, cadastrar um novo paciente assim como deletar um paciente já cadastrado</p>
