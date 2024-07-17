@@ -94,13 +94,11 @@ def programa():
             print("\nObrigado. Até a próxima.")
             break
         else:
-          print("\nerro 1;")
+          print("\nPor favor, utilize as opções disponíveis.\n")
           programa()
-          break
       except:
-        print("\nerro 2;")
+        print("\nOps, algo deu errado. Tente novamente.\n")
         programa()
-        break
       else:
         break
 
