@@ -57,7 +57,7 @@ def nova_consulta():
 def mostrar_consultas():
     """Mostra as consultas cadastradas"""
     if not lista_consultas:
-        print("Nãoa há consultas agendadas.")
+        print("Não há consultas agendadas.")
         return
 
     global id_consulta
